@@ -33,6 +33,10 @@ public class UserServiceImpl implements UserService {
     public HttpStatus deleteUser(long id){
         userRepository.deleteById(id);
         return HttpStatus.OK;
+    }
 
+    @Override
+    public User getUser(String username){
+        return userRepository.findByUsername(username);
     }
 }

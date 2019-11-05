@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController     //simplifies the creation of RESTful web services
 public class UserController {
 
     @Autowired

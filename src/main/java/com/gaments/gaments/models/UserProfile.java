@@ -1,5 +1,7 @@
 package com.gaments.gaments.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -65,6 +67,7 @@ public class UserProfile {
         this.careerInterests = careerInterests;
     }
 
+    @JsonIgnore    //tells Jackson to ignore User object in UserProfile
     @OneToOne(mappedBy = "userProfile", cascade = {CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private User user;

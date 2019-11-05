@@ -11,6 +11,7 @@ public interface UserService {
     public User createUser(User newUser);
     public User login(String username, String password);
     public HttpStatus deleteUser(long id);
+    public User getUser(String username);
 
 
 }
