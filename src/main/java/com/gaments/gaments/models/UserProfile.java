@@ -18,10 +18,62 @@ public class UserProfile {
     private String occupation;
 
     @Column
-    private String emailAddress;
+    private String email;
 
     @Column
     private String careerInterests;
 
+    public UserProfile(){}
 
+    public Long getId(){
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSkills(){
+        return skills;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+
+    public String getOccupation(){
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getCareerInterests() {
+        return careerInterests;
+    }
+
+    public void setCareerInterests(String careerInterests) {
+        this.careerInterests = careerInterests;
+    }
+
+    @OneToOne(mappedBy = "userProfile", cascade = {CascadeType.DETACH,
+            CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    private User user;
+
+    public User getUser(){
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

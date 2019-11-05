@@ -55,5 +55,15 @@ public class User {
         this.emailAddress = emailAddress;
     }
 
+    @OneToOne(cascade = CascadeType.ALL)        //each user will have only one Profile
+    @JoinColumn(name = "user_profile_id")       //creates the foreign key column
+    private UserProfile userProfile;
 
+    public UserProfile getUserProfile(){
+        return userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
+    }
 }
