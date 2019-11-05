@@ -25,6 +25,12 @@ public class UserProfile {
     @Column
     private String careerInterests;
 
+    @Column
+    private Boolean hasMentor;
+
+    @Column
+    private Boolean isMentor;
+
     public UserProfile(){}
 
     public Long getId(){
@@ -65,6 +71,22 @@ public class UserProfile {
 
     public void setCareerInterests(String careerInterests) {
         this.careerInterests = careerInterests;
+    }
+
+    public Boolean getHasMentor() {
+        return hasMentor;
+    }
+
+    public void setHasMentor(Boolean hasMentor) {
+        this.hasMentor = hasMentor;
+    }
+
+    public Boolean getMentor() {
+        return isMentor;
+    }
+
+    public void setMentor(Boolean mentor) {
+        isMentor = mentor;
     }
 
     @JsonIgnore    //tells Jackson to ignore User object in UserProfile

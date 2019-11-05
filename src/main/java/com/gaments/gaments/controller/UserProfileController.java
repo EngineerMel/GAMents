@@ -22,5 +22,9 @@ public class UserProfileController {
         return userProfileService.createUserProfile(username, userProfile);
     }
 
+   @PutMapping("/update/{username}")
+   public UserProfile updateUserProfile(@PathVariable String username, @RequestBody UserProfile updatedProfile){
+        return userProfileService.updateUserProfile(username, updatedProfile);
+   }
 
 }
