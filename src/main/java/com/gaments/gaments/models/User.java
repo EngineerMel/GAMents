@@ -18,9 +18,6 @@ public class User {
     @Column
     private String password;
 
-    @Column
-    private  String emailAddress;
-
     public User(){}
 
     public Long getId(){
@@ -47,13 +44,6 @@ public class User {
         this.password = password;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
 
     @OneToOne(cascade = CascadeType.ALL)        //each user will have only one Profile
     @JoinColumn(name = "user_profile_id")       //creates the foreign key column
