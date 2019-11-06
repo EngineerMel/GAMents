@@ -13,8 +13,7 @@ public interface PostService {
 
     public HttpStatus deletePost(Long id);
 
-    public List<Post> listAllPosts();
-
+    public Iterable<Post> listAllPosts();
 
     public Post getPostById(Long id);
 
