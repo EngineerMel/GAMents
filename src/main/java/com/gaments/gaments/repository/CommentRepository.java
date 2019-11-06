@@ -1,10 +1,10 @@
 package com.gaments.gaments.repository;
 
-import com.gaments.gaments.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+import javax.xml.stream.events.Comment;
 
+@Repository
+public interface CommentRepository extends JpaRepository<Comment, Long> {
 }

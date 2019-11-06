@@ -3,6 +3,8 @@ package com.gaments.gaments.models;
 import javax.persistence.*;
 
 
+
+
 @Entity
 @Table(name = "users")          //dictates which database table this model represents
 public class User {
@@ -59,5 +61,5 @@ public class User {
         this.userProfile = userProfile;
     }
 
-    
+
 }
