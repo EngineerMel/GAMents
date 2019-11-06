@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/profile")
 public class UserProfileController {
 
     @Autowired
@@ -22,9 +21,9 @@ public class UserProfileController {
         return userProfileService.createUserProfile(username, userProfile);
     }
 
-   @PutMapping("/update/{username}")
-   public UserProfile updateUserProfile(@PathVariable String username, @RequestBody UserProfile updatedProfile){
+    @PutMapping("/update/{username}")
+    public UserProfile updateUserProfile(@PathVariable String username, @RequestBody UserProfile updatedProfile){
         return userProfileService.updateUserProfile(username, updatedProfile);
-   }
+    }
 
 }

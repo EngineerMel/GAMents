@@ -2,6 +2,7 @@ package com.gaments.gaments.models;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "users")          //dictates which database table this model represents
 public class User {
@@ -18,9 +19,10 @@ public class User {
     @Column
     private String password;
 
-    public User(){}
+    public User() {
+    }
 
-    public Long getId(){
+    public Long getId() {
         return id;
     }
 
@@ -28,7 +30,7 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return username;
     }
 
@@ -49,11 +51,13 @@ public class User {
     @JoinColumn(name = "user_profile_id")       //creates the foreign key column
     private UserProfile userProfile;
 
-    public UserProfile getUserProfile(){
+    public UserProfile getUserProfile() {
         return userProfile;
     }
 
     public void setUserProfile(UserProfile userProfile) {
         this.userProfile = userProfile;
     }
+
+    
 }

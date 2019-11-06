@@ -22,7 +22,7 @@ public class UserProfile {
     @Column
     private String email;
 
-    @Column
+    @Column(length = 140)
     private String careerInterests;
 
     @Column
