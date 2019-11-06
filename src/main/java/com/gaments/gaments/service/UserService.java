@@ -2,6 +2,7 @@ package com.gaments.gaments.service;
 
 import com.gaments.gaments.models.User;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 
@@ -14,5 +15,6 @@ public interface UserService {
     public User getUser(String username);
 
 
+//    UserDetails loadUserByUsername(String username);
 }
 
