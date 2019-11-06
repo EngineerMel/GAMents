@@ -2,11 +2,11 @@ package com.gaments.gaments.service;
 
 import com.gaments.gaments.models.User;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserService extends UserDetailsService {
 
     public List<User> listUsers();
     public User createUser(User newUser);
