@@ -5,9 +5,9 @@ import javax.persistence.*;
 
 
 
-@Entity
-@Table(name = "users")          //dictates which database table this model represents
-public class User {
+    @Entity
+    @Table(name = "users")          //dictates which database table this model represents
+    public class User {
 
     //manages column names and even auto-generate IDs
     @Id
