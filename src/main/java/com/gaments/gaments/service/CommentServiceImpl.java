@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CommentServiceImpl implements CommentService {
 
@@ -36,5 +38,11 @@ public class CommentServiceImpl implements CommentService {
     public HttpStatus deleteComment(Long commentId){
         commentRepository.deleteById(commentId);
         return HttpStatus.valueOf(200);
+    }
+
+    @Override
+    public List<Comment> listUsersComments(String username){
+        User user = userRepository.findByUsername(username);
+        return commentRepository.findCommentsByUser(user);
     }
 }
