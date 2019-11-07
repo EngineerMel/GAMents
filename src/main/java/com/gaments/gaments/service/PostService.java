@@ -16,7 +16,7 @@ public interface PostService {
 
     List<Post> listAllPosts();
 
-    HttpStatus deleteById(Long postId);
+    HttpStatus deleteById(Long postId) throws Exception;
 
     List<Post> listLoggedPosts();
 

@@ -54,14 +54,14 @@ public class PostServiceImpl implements PostService {
 
     @Override
     @Transactional
-    public HttpStatus deleteById(Long postId) {
+    public HttpStatus deleteById(Long postId) throws Exception {
         Authentication auth = authenticationImpl.getAuthentication();
         Long userId = userRepository.findByUsername(auth.getName()).getId();
         Long postUserId = postRepository.findPostsById(postId).getUser().getId();
         if (userId.equals(postUserId)) {
             postRepository.deleteById(postId);
-            return HttpStatus.OK;
+            return HttpStatus.valueOf(200);
         }
-        return HttpStatus.FORBIDDEN;
+        throw new IllegalAccessException();
     }
 }
