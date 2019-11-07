@@ -36,6 +36,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/blah").hasRole("USER")
                 .and()
                 .httpBasic();
+                //.and()
+                //.logout()
+                //.logoutUrl()        //add in url to homepage when i create front end
+                //.logoutSuccessUrl()
+               // .invalidateHttpSession(true)
+                //.deleteCookies("JSESSIONID");
+
 
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
