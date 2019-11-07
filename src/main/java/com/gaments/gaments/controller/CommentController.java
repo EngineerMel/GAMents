@@ -31,5 +31,10 @@ public class CommentController {
     public List<Comment> listUsersComments(@PathVariable String username){
         return commentService.listUsersComments(username);
     }
+    //List All Comments
+    @GetMapping("/comment/list")
+    public List<Comment> listAllComments(){
+        return commentService.listAllComments();
+    }
 
 }
