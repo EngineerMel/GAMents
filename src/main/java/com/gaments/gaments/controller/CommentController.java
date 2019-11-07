@@ -12,7 +12,7 @@ public class CommentController {
     @Autowired
     CommentService commentService;
 
-    @PostMapping("/comment/{postId}/username")
+    @PostMapping("/comment/{postId}/{username}")
     public Comment createComment(@RequestBody Comment newComment, @PathVariable Long postId, @PathVariable String username){
         return commentService.createComment(newComment, postId, username);
     }
@@ -21,4 +21,6 @@ public class CommentController {
     public HttpStatus deleteComment(@PathVariable Long commentId){
         return commentService.deleteComment(commentId);
     }
+
+
 }

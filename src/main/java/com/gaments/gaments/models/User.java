@@ -1,5 +1,7 @@
 package com.gaments.gaments.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 
@@ -40,6 +42,7 @@ import javax.persistence.*;
         this.username = username;
     }
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)         //this will prevent the password from showing up on a request output
     public String getPassword() {
         return password;
     }
@@ -50,7 +53,8 @@ import javax.persistence.*;
 
 
     @OneToOne(cascade = CascadeType.ALL)        //each user will have only one Profile
-    @JoinColumn(name = "user_profile_id")       //creates the foreign key column
+    @JoinColumn(name = "user_profile_id")   //creates the foreign key column
+
     private UserProfile userProfile;
 
     public UserProfile getUserProfile() {

@@ -14,26 +14,28 @@ public class PostController {
     @Autowired
     PostService postService;
 
+        //creates a post
     @PostMapping("/post/{username}")
     public Post createPost (@RequestBody Post newPost, @PathVariable String username){
         return postService.createPost(newPost, username);
     }
 
+        //list the User's posts
     @GetMapping("/list-posts/{username}")
     public List<Post> listUsersPost(@PathVariable String username){
         return postService.listUsersPost(username);
     }
 
+        //list all posts
     @GetMapping("/list-posts")
     public List<Post> listPosts(){
         return postService.listPosts();
     }
 
+        //deletes a post by the postId
     @DeleteMapping("/post/delete/{postId}")
     public HttpStatus deletePostById (@PathVariable Long postId){
         return postService.deleteById(postId);
     }
-
-
 
 }

@@ -33,7 +33,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-     public HttpStatus deleteComment(Long commentId){
+    public HttpStatus deleteComment(Long commentId){
         commentRepository.deleteById(commentId);
         return HttpStatus.valueOf(200);
     }
