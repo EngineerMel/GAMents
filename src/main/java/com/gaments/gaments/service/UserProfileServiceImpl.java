@@ -1,10 +1,12 @@
 package com.gaments.gaments.service;
 
+import com.gaments.gaments.config.AuthenticationImpl;
 import com.gaments.gaments.models.User;
 import com.gaments.gaments.models.UserProfile;
 import com.gaments.gaments.repository.UserProfileRepository;
 import com.gaments.gaments.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +18,9 @@ public class UserProfileServiceImpl implements UserProfileService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    AuthenticationImpl authenticationImpl;
+
     @Override
     public UserProfile createUserProfile(String username, UserProfile newUserProfile){
         User user = userRepository.findByUsername(username);
@@ -26,10 +31,18 @@ public class UserProfileServiceImpl implements UserProfileService {
     }
 
     @Override
-    public UserProfile getUserProfile(String username){
+    public UserProfile getLoggedUserProfile(String username){
         User user = userRepository.findByUsername(username);
         return user.getUserProfile();
     }
+
+    @Override
+    public UserProfile getUserProfile() {
+        Authentication auth = authenticationImpl.getAuthentication();
+        User user = userRepository.findByUsername(auth.getName());
+        return user.getUserProfile();
+    }
+
 
     @Override
     public UserProfile updateUserProfile(String username, UserProfile updatedUserProfile){

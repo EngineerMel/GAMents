@@ -29,7 +29,13 @@ public class PostController {
         //list all posts
     @GetMapping("/all-posts")
     public List<Post> listAllPosts(){
-        return postService.listPosts();
+        return postService.listAllPosts();
+    }
+
+    //list a logged in user's posts
+    @GetMapping("/list-logged/posts")
+    public List<Post> listLoggedPosts(){
+        return postService.listLoggedPosts();
     }
 
         //deletes a post by the postId

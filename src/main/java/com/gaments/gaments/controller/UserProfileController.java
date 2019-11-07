@@ -11,18 +11,26 @@ public class UserProfileController {
     @Autowired
     UserProfileService userProfileService;
 
+    //create UserProfile
     @PostMapping("/profile/{username}")
     public UserProfile createUserProfile(@PathVariable String username, @RequestBody UserProfile newUserProfile){
         return userProfileService.createUserProfile(username, newUserProfile);
     }
 
+    //Get UserProfile of logged in User
     @GetMapping("/profile/{username}")
-    public UserProfile getUserProfile(@PathVariable String username){
-        return userProfileService.getUserProfile(username);
+    public UserProfile getLoggedUserProfile(@PathVariable String username){
+        return userProfileService.getLoggedUserProfile(username);
+    }
+
+    @GetMapping("/profile")
+    public UserProfile getUserProfile(){
+        return userProfileService.getUserProfile();
     }
 
     @PutMapping("/update/{username}")
     public UserProfile updateUserProfile(@PathVariable String username, @RequestBody UserProfile updateUserProfile){
         return userProfileService.updateUserProfile(username, updateUserProfile);
     }
+
 }
