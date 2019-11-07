@@ -1,5 +1,7 @@
 package com.gaments.gaments.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,7 @@ public class Comment {
 
     @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "post_id", nullable = false)
+    @JsonBackReference      //this annotation means that the comment class will be omitted from serialization(is the back part of reference)
     private Post post;
 
     private String description;
