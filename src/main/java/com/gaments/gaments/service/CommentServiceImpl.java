@@ -51,4 +51,10 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.findAll();
     }
 
+    @Override
+    public List<Comment> listPostComments(Long postId){
+        Post post = postRepository.findPostsById(postId);
+        return commentRepository.findCommentsByPost(post);
+    }
+
 }

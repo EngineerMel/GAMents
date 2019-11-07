@@ -36,5 +36,10 @@ public class CommentController {
     public List<Comment> listAllComments(){
         return commentService.listAllComments();
     }
+    //List Comments Of A Post
+    @GetMapping("/comment/list/bypost/{postId}")
+    public List<Comment> listPostComments(@PathVariable Long postId){
+        return commentService.listPostComments(postId);
+    }
 
 }

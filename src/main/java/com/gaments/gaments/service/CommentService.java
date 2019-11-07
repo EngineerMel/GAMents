@@ -11,4 +11,5 @@ public interface CommentService {
     public HttpStatus deleteComment(Long commentId);
     public List<Comment> listUsersComments(String username);
     public List<Comment> listAllComments();
+    public List<Comment> listPostComments(Long postId);
 }
