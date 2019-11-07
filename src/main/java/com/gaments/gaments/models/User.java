@@ -1,5 +1,6 @@
 package com.gaments.gaments.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -54,7 +55,7 @@ import javax.persistence.*;
 
     @OneToOne(cascade = CascadeType.ALL)        //each user will have only one Profile
     @JoinColumn(name = "user_profile_id")   //creates the foreign key column
-
+    @JsonBackReference
     private UserProfile userProfile;
 
     public UserProfile getUserProfile() {

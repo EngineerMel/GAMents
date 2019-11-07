@@ -1,11 +1,12 @@
 package com.gaments.gaments.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user_profile")
+@Table(name = "userProfile")
 public class UserProfile {
 
     @Id
@@ -90,8 +91,8 @@ public class UserProfile {
     }
 
     @JsonIgnore    //tells Jackson to ignore User object in UserProfile
-    @OneToOne(mappedBy = "userProfile", cascade = {CascadeType.DETACH,
-            CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @OneToOne(mappedBy = "userProfile", cascade = {CascadeType.ALL})
+    @JsonManagedReference
     private User user;
 
     public User getUser(){
