@@ -10,6 +10,14 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "post_id", nullable = false)
+    private Post post;
+
     private String description;
 
     public Comment(){}
@@ -30,5 +38,20 @@ public class Comment {
         this.description = description;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
 
 }
