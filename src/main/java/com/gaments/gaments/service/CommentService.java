@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface CommentService {
 
-    public Comment createComment(Comment newComment, Long postId, String username);
+    public Comment createCommentForLoggedUser(Comment newComment, Long postId, String username);
+    public Comment createComment(Comment newComment, Long postId);
     public HttpStatus deleteComment(Long commentId);
     public List<Comment> listUsersComments(String username);
     public List<Comment> listAllComments();
