@@ -15,9 +15,9 @@ public class PostController {
     PostService postService;
 
         //creates a post
-    @PostMapping("/post/{username}")
-    public Post createPost (@RequestBody Post newPost, @PathVariable String username){
-        return postService.createPost(newPost, username);
+    @PostMapping("/post")
+    public Post createPost (@RequestBody Post newPost){
+        return postService.createPost(newPost);
     }
 
         //list the User's posts

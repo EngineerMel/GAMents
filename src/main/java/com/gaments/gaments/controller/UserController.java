@@ -31,9 +31,6 @@ public class UserController {
         return userService.listUsers();
     }
 
-    @GetMapping("/{username}/data")
-    public User getUserData(@PathVariable String username){
-        return userService.getUserData(username);
-    }
+
 
 }

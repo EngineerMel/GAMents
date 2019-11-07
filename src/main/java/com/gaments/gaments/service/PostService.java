@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface PostService {
 
-    Post createPost(Post newPost, String username);
+    Post createPost(Post newPost);
 
     List<Post> listUsersPost(String username);
 
