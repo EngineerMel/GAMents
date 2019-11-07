@@ -45,9 +45,11 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 
     @Override
-    public UserProfile updateUserProfile(String username, UserProfile updatedUserProfile){
-        User user = userRepository.findByUsername(username);
+    public UserProfile updateUserProfile(UserProfile updatedUserProfile){
+        Authentication auth = authenticationImpl.getAuthentication();
+        User user = userRepository.findByUsername(auth.getName());
         UserProfile userProfile = user.getUserProfile();
+
         if(updatedUserProfile.getSkills() != null){
             userProfile.setSkills(updatedUserProfile.getSkills());
         }

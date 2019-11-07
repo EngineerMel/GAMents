@@ -7,5 +7,6 @@ public interface UserProfileService {
     public UserProfile createUserProfile(String username, UserProfile newUserProfile);
     public UserProfile getLoggedUserProfile(String username);
     public UserProfile getUserProfile();
-    public UserProfile updateUserProfile(String username, UserProfile updatedUserProfile);
+    public UserProfile updateUserProfile(UserProfile updatedUserProfile);
+
 }

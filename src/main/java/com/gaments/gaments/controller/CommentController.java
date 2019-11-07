@@ -10,24 +10,27 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
+@RequestMapping("/comment")
 public class CommentController {
 
     @Autowired
     CommentService commentService;
 
     //Create Comment For User That is Logged In
-    @PostMapping("/comment/{postId}/{username}")
-    public Comment createCommentForLoggedUser(@RequestBody Comment newComment, @PathVariable Long postId, @PathVariable String username){
-        return commentService.createCommentForLoggedUser(newComment, postId, username);
-    }
 
-    @PostMapping("/comment/{postId}")
+    @PostMapping("/{postId}")
     public Comment createComment(@RequestBody Comment newComment, @PathVariable Long postId){
         return commentService.createComment(newComment, postId);
     }
 
+    @PostMapping("/{postId}/{username}")
+    public Comment createCommentForLoggedUser(@RequestBody Comment newComment, @PathVariable Long postId, @PathVariable String username){
+        return commentService.createCommentForLoggedUser(newComment, postId, username);
+    }
+
+
     //Delete A Comment
-    @DeleteMapping("/comment/delete/{commentId}")
+    @DeleteMapping("/delete/{commentId}")
     public HttpStatus deleteComment(@PathVariable Long commentId){
         try{
             return commentService.deleteComment(commentId);
@@ -43,19 +46,19 @@ public class CommentController {
     }
 
     //List Users Comments
-    @GetMapping("/comment/list/{username}")
+    @GetMapping("/list/{username}")
     public List<Comment> listUsersComments(@PathVariable String username){
         return commentService.listUsersComments(username);
     }
 
     //List All Comments
-    @GetMapping("/comment/list")
+    @GetMapping("/list")
     public List<Comment> listAllComments(){
         return commentService.listAllComments();
     }
 
     //List Comments Of A Post
-    @GetMapping("/comment/list/bypost/{postId}")
+    @GetMapping("/list/bypost/{postId}")
     public List<Comment> listPostComments(@PathVariable Long postId){
         return commentService.listPostComments(postId);
     }

@@ -4,8 +4,8 @@ import com.gaments.gaments.models.Post;
 import com.gaments.gaments.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
+    import org.springframework.web.bind.annotation.*;
+    import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class PostController {
     }
 
     //list the Users posts
-    @GetMapping("/list-posts/{username}")
+    @GetMapping("/list/{username}")
     public List<Post> listUsersPost(@PathVariable String username) {
         return postService.listUsersPost(username);
     }
@@ -39,6 +39,8 @@ public class PostController {
     public List<Post> listLoggedPosts() {
         return postService.listLoggedPosts();
     }
+
+
 
     //deletes a post by the postId
     @DeleteMapping("/delete/{postId}")
