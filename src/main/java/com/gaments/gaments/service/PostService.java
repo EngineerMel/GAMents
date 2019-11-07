@@ -14,7 +14,7 @@ public interface PostService {
 
     List<Post> listUsersPost(String username);
 
-    List<Post> listPosts();
+    List<Post> listAllPosts();
 
     HttpStatus deleteById(Long postId);
 
