@@ -31,6 +31,10 @@ A fullstack application with a RESTful api connected to a React front end and mi
 * Microservices with Docker : Experienced errors with EntityFactoryManager when Eureka was added to my API
 * Setting a concrete plan of tasks I wanted to complete each day throughout the project weeks
 
+## React Movie-List Front-end
+ 
+* This link includes the react-front end I created to show proof of a basic comprehension of React concepts 
+  [https://github.com/EngineerMel/MovieList/tree/master/src/components]
 
 ## User Stories
 * As a user, I can create an account
