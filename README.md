@@ -1,30 +1,13 @@
 # GAMents
 
-# spillit-monolith
+A fullstack application with a RESTful api connected to a React front end and microservice back end.
 
-A fullstack application with a RESTful api connected to a front end all built from scratch.
+## Tools
 
-## Collaborators
-
-* [Ramel Haines]
-* [Benjamin Kats]
-
-
-## Technologies Used
-
-* [Spring] - Used for creating our backend API
-* [PostgreSQL] - Used a SQL language for our relational database which allows us to store and retrieve data.
-* HTML/CSS/Javascript - Used to build the front-end of our application
-
-[Ramel Haines]: https://github.com/EngineerMel
-[Benjamin Kats]: https://github.com/BenKats
-[Spring]: https://spring.io
-[PostgreSQL]: https://www.postgresql.org/
-
-## Wireframe
-
-![ERD](./erd_img/er_diagram.png)
-
+* Postman
+* LucidChart
+* Docker
+* Maven
 
 ## General Approach 
 
@@ -40,22 +23,13 @@ We first reviewed the technical requirements, necessary deliverables and sketche
 
 ## Major Hurdles
 * Connecting the frontend to the backend due to Cross-origin resource sharing(CORS) issue.
-* Testing UserService login functionality
-* Creating the relations between our tables took some time.
-* Testing UserProfileServiveTest
-
-
-## Installation Instructions
-* Intellij - Or any other IDE configured to run Spring apps to launch the local server.
-* PostgresSQL - Needed to create and modify the database on server start.
-* Google Chrome - or other major browser updated to the latest version.
-1. Open the project in Intellij.
-2. Build and Run the ProjectApplication file.
-3. Open the index.html file with Chrome.
+* Fetching the the api from the backend
+* Understanding the basic concepts on state and props(passing props). 
+* Microservices with Docker : Experienced errors with EntityFactoryManager when Eureka was added to my API
 
 
 ## User Stories
-* As a news reporter, I want to make an account to deliver news updates to the online community.
-* As a user interface designer, I want to see white boarding sessions from other designers to improve my skills.
-* As a user, I want to edit my contact details so I can keep up to date.
-* As a Business user, I can post information about my products so that potential customers can learn about my business. 
+* As a user, I can create an account
+* As a user, I can view a feed of posts created by other users that is related to tech and design
+* As a user, I can find a mentor online based on skills that I need help with
+* As a Mentor, I can support the development of others
