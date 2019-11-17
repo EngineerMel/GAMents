@@ -9,6 +9,10 @@ A fullstack application with a RESTful api connected to a React front end and mi
 * Docker
 * Maven
 
+## About GAMents
+
+* Click the link here and follow the presentation: [https://prezi.com/view/lpnfdnznel25i8YtaxW9/]
+
 ## General Approach 
 
 * Reviewed the technical requirements, necessary deliverables to achieve the project tasks
